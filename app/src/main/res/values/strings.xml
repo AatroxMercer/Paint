@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Paint</string>
-
     <string name="splash_content">Paint</string>
-
-    <string name="button_start">Start</string>
-    <string name="button_help">Help</string>
     <string name="button_exit">Exit</string>
+    <string name="button_help">Help</string>
+    <string name="button_return">Return</string>
+    <string name="button_start">Start</string>
+    <string name="text_help">Help Text</string>
 </resources>

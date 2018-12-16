@@ -5,11 +5,11 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-public class MenuActivity extends AppCompatActivity {
+public class HelpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_help);
     }
 
     public void start(View view) {
@@ -17,8 +17,8 @@ public class MenuActivity extends AppCompatActivity {
         exit(view);
     }
 
-    public void help(View view) {
-        startActivity(new Intent(this, HelpActivity.class));
+    public void menu(View view) {
+        startActivity(new Intent(this, MenuActivity.class));
         exit(view);
     }
 
