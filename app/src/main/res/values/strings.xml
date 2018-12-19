@@ -6,4 +6,37 @@
     <string name="button_return">Return</string>
     <string name="button_start">Start</string>
     <string name="text_help">Help Text</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="setting_start">Start</string>
+    <string name="setting_layout">Layout</string>
+    <string name="setting_edit">Edit</string>
+    <string name="title_bg_color">Background Color</string>
+
+    <string-array name="setting_list_color">
+        <item>Black</item>
+        <item>Blue</item>
+        <item>Cyan</item>
+        <item>Dark Gray</item>
+        <item>Gray</item>
+        <item>Green</item>
+        <item>Light Gray</item>
+        <item>Magenta</item>
+        <item>Red</item>
+        <item>White</item>
+        <item>Yellow</item>
+    </string-array>
+
+    <string-array name="setting_list_color_values" translatable="false">
+        <item>0xFF000000</item>
+        <item>0xFF0000FF</item>
+        <item>0xFF00FFFF</item>
+        <item>0xFF444444</item>
+        <item>0xFF888888</item>
+        <item>0xFF00FF00</item>
+        <item>0xFFCCCCCC</item>
+        <item>0xFFFF00FF</item>
+        <item>0xFFFF0000</item>
+        <item>0xFFFFFFFF</item>
+        <item>0xFFFFFF00</item>
+    </string-array>
 </resources>

@@ -7,4 +7,23 @@
     <string name="button_return">返回主页</string>
     <string name="button_start">开始画图</string>
     <string name="text_help">帮助文字</string>
+    <string name="title_activity_settings">设置</string>
+    <string name="setting_start">开始</string>
+    <string name="setting_layout">布局</string>
+    <string name="setting_edit">编辑</string>
+    <string name="title_bg_color">背景颜色</string>
+
+    <string-array name="setting_list_color">
+        <item>黑色</item>
+        <item>蓝色</item>
+        <item>青色</item>
+        <item>深灰</item>
+        <item>灰色</item>
+        <item>绿色</item>
+        <item>浅灰</item>
+        <item>品红</item>
+        <item>红色</item>
+        <item>白色</item>
+        <item>黄色</item>
+    </string-array>
 </resources>

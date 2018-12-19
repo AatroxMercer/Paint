@@ -1,0 +1,14 @@
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+    <header
+        android:fragment="gq.aatrox.paint.SettingsActivity$StartSettingsFragment"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="@string/setting_start" />
+    <header
+        android:fragment="gq.aatrox.paint.SettingsActivity$StartSettingsFragment"
+        android:icon="@android:drawable/ic_menu_mapmode"
+        android:title="@string/setting_layout" />
+    <header
+        android:fragment="gq.aatrox.paint.SettingsActivity$StartSettingsFragment"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="@string/setting_edit" />
+</preference-headers>

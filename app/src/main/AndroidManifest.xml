@@ -14,11 +14,17 @@
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".MenuActivity" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".PaintActivity" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.AppCompat.Light" />
     </application>
+
 </manifest>
