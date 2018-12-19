@@ -2,6 +2,7 @@ package gq.aatrox.paint;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.graphics.Canvas;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.ListPreference;
@@ -9,7 +10,6 @@ import android.preference.Preference;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.MenuItem;
 
 import java.util.List;
@@ -71,6 +71,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             addPreferencesFromResource(R.xml.setting_start);
             setHasOptionsMenu(true);
             bindPreferenceSummaryToValue(findPreference("bg_color"));
+            bindPreferenceSummaryToValue(findPreference("fg_color"));
+            bindPreferenceSummaryToValue(findPreference("paint_type"));
         }
 
         @Override

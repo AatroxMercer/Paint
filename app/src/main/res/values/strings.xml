@@ -11,6 +11,8 @@
     <string name="setting_layout">Layout</string>
     <string name="setting_edit">Edit</string>
     <string name="title_bg_color">Background Color</string>
+    <string name="title_fg_color">Foreground Color</string>
+    <string name="title_paint_type">Paint Type</string>
 
     <string-array name="setting_list_color">
         <item>Black</item>
@@ -38,5 +40,27 @@
         <item>0xFFFF0000</item>
         <item>0xFFFFFFFF</item>
         <item>0xFFFFFF00</item>
+    </string-array>
+
+    <string-array name="setting_list_type">
+        <item>Arc</item>
+        <item>Circle</item>
+        <item>Line</item>
+        <item>Oval</item>
+        <item>Path</item>
+        <item>Rectangle</item>
+        <item>Round Rectangle</item>
+        <item>Text</item>
+    </string-array>
+
+    <string-array name="setting_list_type_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
     </string-array>
 </resources>
