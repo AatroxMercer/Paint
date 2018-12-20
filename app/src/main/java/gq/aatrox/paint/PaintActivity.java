@@ -14,6 +14,11 @@ public class PaintActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+        
+
+
         setContentView(R.layout.activity_paint);
         setupPaint();
     }
@@ -27,14 +32,14 @@ public class PaintActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        Log.e("action", "down");
+//                        Log.e("action", "down");
                         moving = false;
                         break;
                     case MotionEvent.ACTION_UP:
-                        Log.e("action", "up");
+//                        Log.e("action", "up");
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        Log.e("action", "move");
+//                        Log.e("action", "move");
                         if (!moving) {
                             moving = true;
                         }
@@ -49,7 +54,7 @@ public class PaintActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 if (!moving) {
-                    Log.e("action", "long click");
+//                    Log.e("action", "long click");
                     startActivity(new Intent(PaintActivity.this, SettingsActivity.class));
                 }
                 return true;

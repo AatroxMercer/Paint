@@ -2,15 +2,17 @@ package gq.aatrox.paint;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.graphics.Canvas;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.SwitchPreference;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -24,19 +26,38 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
                 ListPreference listPreference = (ListPreference) preference;
                 int index = listPreference.findIndexOfValue(stringValue);
                 preference.setSummary(index < 0 ? null : listPreference.getEntries()[index]);
+            } else if (preference instanceof SwitchPreference) {
+                setSwitchSummary((SwitchPreference) preference, stringValue);
             } else {
                 preference.setSummary(stringValue);
             }
             return true;
         }
+
+        private void setSwitchSummary(SwitchPreference switchPreference, String stringValue) {
+            boolean value = stringValue.contentEquals("true");
+
+            if (switchPreference.getKey().contentEquals("paint_style")) {
+                switchPreference.setSummary(value ? R.string.switch_fill : R.string.switch_stroke);
+            } else {
+                switchPreference.setSummary(String.valueOf(value));
+            }
+        }
     };
 
     private static void bindPreferenceSummaryToValue(Preference preference) {
         preference.setOnPreferenceChangeListener(sBindPreferenceSummaryToValueListener);
-        sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
-                PreferenceManager
-                        .getDefaultSharedPreferences(preference.getContext())
-                        .getString(preference.getKey(), ""));
+        try {
+            sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
+                    PreferenceManager
+                            .getDefaultSharedPreferences(preference.getContext())
+                            .getString(preference.getKey(), ""));
+        } catch (Exception e) {
+            sBindPreferenceSummaryToValueListener.onPreferenceChange(preference,
+                    PreferenceManager
+                            .getDefaultSharedPreferences(preference.getContext())
+                            .getBoolean(preference.getKey(), false));
+        }
     }
 
     @Override
@@ -60,7 +81,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
     protected boolean isValidFragment(String fragmentName) {
         return PreferenceFragment.class.getName().equals(fragmentName)
-                || StartSettingsFragment.class.getName().equals(fragmentName);
+                || StartSettingsFragment.class.getName().equals(fragmentName)
+                || EditSettingsFragment.class.getName().equals(fragmentName);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -72,7 +94,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             setHasOptionsMenu(true);
             bindPreferenceSummaryToValue(findPreference("bg_color"));
             bindPreferenceSummaryToValue(findPreference("fg_color"));
-            bindPreferenceSummaryToValue(findPreference("paint_type"));
+            bindPreferenceSummaryToValue(findPreference("stroke_width"));
+            bindPreferenceSummaryToValue(findPreference("paint_style"));
         }
 
         @Override
@@ -86,4 +109,24 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
         }
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+    public static class EditSettingsFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            addPreferencesFromResource(R.xml.setting_edit);
+            setHasOptionsMenu(true);
+            bindPreferenceSummaryToValue(findPreference("paint_type"));
+        }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            int id = item.getItemId();
+            if (id == android.R.id.home) {
+                startActivity(new Intent(getActivity(), SettingsActivity.class));
+                return true;
+            }
+            return super.onOptionsItemSelected(item);
+        }
+    }
 }

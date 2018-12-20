@@ -13,6 +13,8 @@
     <string name="title_bg_color">Background Color</string>
     <string name="title_fg_color">Foreground Color</string>
     <string name="title_paint_type">Paint Type</string>
+    <string name="title_stroke_width">Stroke Width</string>
+    <string name="title_paint_style">Fill Style</string>
 
     <string-array name="setting_list_color">
         <item>Black</item>
@@ -46,11 +48,8 @@
         <item>Arc</item>
         <item>Circle</item>
         <item>Line</item>
-        <item>Oval</item>
         <item>Path</item>
         <item>Rectangle</item>
-        <item>Round Rectangle</item>
-        <item>Text</item>
     </string-array>
 
     <string-array name="setting_list_type_values" translatable="false">
@@ -59,8 +58,7 @@
         <item>2</item>
         <item>3</item>
         <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
     </string-array>
+    <string name="switch_fill">Fill</string>
+    <string name="switch_stroke">Stroke</string>
 </resources>

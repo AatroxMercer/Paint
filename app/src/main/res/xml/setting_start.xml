@@ -14,11 +14,16 @@
         android:key="fg_color"
         android:title="@string/title_fg_color" />
 
-    <ListPreference
+    <EditTextPreference
         android:defaultValue="4"
-        android:entries="@array/setting_list_type"
-        android:entryValues="@array/setting_list_type_values"
-        android:key="paint_type"
-        android:title="@string/title_paint_type" />
+        android:key="stroke_width"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/title_stroke_width" />
+
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="paint_style"
+        android:title="@string/title_paint_style" />
 
 </PreferenceScreen>
