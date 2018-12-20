@@ -12,11 +12,14 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import java.util.List;
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
