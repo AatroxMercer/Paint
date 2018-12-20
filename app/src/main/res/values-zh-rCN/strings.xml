@@ -16,7 +16,8 @@
     <string name="title_paint_type">画笔类型</string>
     <string name="title_stroke_width">笔划宽度</string>
     <string name="title_paint_style">填充风格</string>
-
+    <string name="switch_fill">实心</string>
+    <string name="switch_stroke">空心</string>
     <string-array name="setting_list_color">
         <item>黑色</item>
         <item>蓝色</item>
@@ -30,7 +31,6 @@
         <item>白色</item>
         <item>黄色</item>
     </string-array>
-
     <string-array name="setting_list_type">
         <item>弧形</item>
         <item>圆形</item>
@@ -38,6 +38,4 @@
         <item>笔迹</item>
         <item>矩形</item>
     </string-array>
-    <string name="switch_fill">实心</string>
-    <string name="switch_stroke">空心</string>
 </resources>

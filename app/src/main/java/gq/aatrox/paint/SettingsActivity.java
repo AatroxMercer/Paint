@@ -10,13 +10,15 @@ import android.preference.SwitchPreference;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import java.util.List;
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 
     private static Preference.OnPreferenceChangeListener sBindPreferenceSummaryToValueListener = new Preference.OnPreferenceChangeListener() {
         @Override
@@ -36,7 +38,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
         private void setSwitchSummary(SwitchPreference switchPreference, String stringValue) {
             boolean value = stringValue.contentEquals("true");
-
             if (switchPreference.getKey().contentEquals("paint_style")) {
                 switchPreference.setSummary(value ? R.string.switch_fill : R.string.switch_stroke);
             } else {
