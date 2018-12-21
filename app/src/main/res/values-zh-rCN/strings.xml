@@ -9,8 +9,6 @@
     <string name="text_help">帮助文字</string>
     <string name="title_activity_settings">设置</string>
     <string name="setting_start">开始</string>
-    <string name="setting_layout">布局</string>
-    <string name="setting_edit">编辑</string>
     <string name="title_bg_color">背景颜色</string>
     <string name="title_fg_color">前景颜色</string>
     <string name="title_paint_type">画笔类型</string>
@@ -40,4 +38,7 @@
     </string-array>
     <string name="switch_fill">实心</string>
     <string name="switch_stroke">空心</string>
+    <string name="coming_soon">敬请期待</string>
+    <string name="setting_group_color">颜色</string>
+    <string name="setting_group_paint">画笔</string>
 </resources>

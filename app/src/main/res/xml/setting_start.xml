@@ -1,29 +1,44 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference
-        android:defaultValue="0xFF000000"
-        android:entries="@array/setting_list_color"
-        android:entryValues="@array/setting_list_color_values"
-        android:key="bg_color"
-        android:title="@string/title_bg_color" />
+    <PreferenceCategory android:title="@string/setting_group_color">
 
-    <ListPreference
-        android:defaultValue="0xFF000000"
-        android:entries="@array/setting_list_color"
-        android:entryValues="@array/setting_list_color_values"
-        android:key="fg_color"
-        android:title="@string/title_fg_color" />
+        <ListPreference
+            android:defaultValue="0xFF000000"
+            android:entries="@array/setting_list_color"
+            android:entryValues="@array/setting_list_color_values"
+            android:key="fg_color"
+            android:title="@string/title_fg_color" />
 
-    <EditTextPreference
-        android:defaultValue="4"
-        android:key="stroke_width"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="@string/title_stroke_width" />
+        <ListPreference
+            android:defaultValue="0xFF000000"
+            android:entries="@array/setting_list_color"
+            android:entryValues="@array/setting_list_color_values"
+            android:key="bg_color"
+            android:title="@string/title_bg_color" />
 
-    <SwitchPreference
-        android:defaultValue="false"
-        android:key="paint_style"
-        android:title="@string/title_paint_style" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/setting_group_paint">
+
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="paint_style"
+            android:title="@string/title_paint_style" />
+
+        <EditTextPreference
+            android:defaultValue="4"
+            android:key="stroke_width"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/title_stroke_width" />
+
+        <ListPreference
+            android:defaultValue="3"
+            android:entries="@array/setting_list_type"
+            android:entryValues="@array/setting_list_type_values"
+            android:key="paint_type"
+            android:title="@string/title_paint_type" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

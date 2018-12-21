@@ -1,7 +1,9 @@
 package gq.aatrox.paint;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -10,6 +12,13 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        initSettings();
+
+        splashSleep();
+    }
+
+    private void splashSleep() {
         new Thread() {
             @Override
             public void run() {
@@ -24,6 +33,10 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         }.start();
+    }
+
+    private void initSettings() {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
     }
 }

@@ -8,8 +8,6 @@
     <string name="text_help">Help Text</string>
     <string name="title_activity_settings">Settings</string>
     <string name="setting_start">Start</string>
-    <string name="setting_layout">Layout</string>
-    <string name="setting_edit">Edit</string>
     <string name="title_bg_color">Background Color</string>
     <string name="title_fg_color">Foreground Color</string>
     <string name="title_paint_type">Paint Type</string>
@@ -61,4 +59,7 @@
     </string-array>
     <string name="switch_fill">Fill</string>
     <string name="switch_stroke">Stroke</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="setting_group_color">Color</string>
+    <string name="setting_group_paint">Paint</string>
 </resources>

@@ -10,7 +10,6 @@ import android.preference.SwitchPreference;
 import android.support.v7.app.ActionBar;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.MenuItem;
 
 import java.util.List;
@@ -85,7 +84,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     protected boolean isValidFragment(String fragmentName) {
         return PreferenceFragment.class.getName().equals(fragmentName)
                 || StartSettingsFragment.class.getName().equals(fragmentName)
-                || EditSettingsFragment.class.getName().equals(fragmentName);
+                || NullSettingsFragment.class.getName().equals(fragmentName);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -97,8 +96,9 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             setHasOptionsMenu(true);
             bindPreferenceSummaryToValue(findPreference("bg_color"));
             bindPreferenceSummaryToValue(findPreference("fg_color"));
-            bindPreferenceSummaryToValue(findPreference("stroke_width"));
             bindPreferenceSummaryToValue(findPreference("paint_style"));
+            bindPreferenceSummaryToValue(findPreference("paint_type"));
+            bindPreferenceSummaryToValue(findPreference("stroke_width"));
         }
 
         @Override
@@ -113,13 +113,12 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public static class EditSettingsFragment extends PreferenceFragment {
+    public static class NullSettingsFragment extends PreferenceFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            addPreferencesFromResource(R.xml.setting_edit);
-            setHasOptionsMenu(true);
-            bindPreferenceSummaryToValue(findPreference("paint_type"));
+            addPreferencesFromResource(R.xml.setting_null);
+            setHasOptionsMenu(false);
         }
 
         @Override

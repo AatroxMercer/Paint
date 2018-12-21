@@ -24,7 +24,7 @@ public class PaintActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
 
-        settings  = PreferenceManager.getDefaultSharedPreferences(this);
+        settings = PreferenceManager.getDefaultSharedPreferences(this);
         String shit = settings.getString("example_text", "shit");
         Log.e("shit", shit);
         setupPaint();
@@ -41,15 +41,15 @@ public class PaintActivity extends AppCompatActivity {
 
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        Log.e("action", "touch");
-                        Log.e("action", "down");
+//                        Log.e("action", "touch");
+//                        Log.e("action", "down");
                         moving = false;
                         break;
                     case MotionEvent.ACTION_UP:
-                        Log.e("action", "up");
+//                        Log.e("action", "up");
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        Log.e("action", "move");
+//                        Log.e("action", "move");
                         if (!moving) {
                             moving = true;
                         }
@@ -64,7 +64,7 @@ public class PaintActivity extends AppCompatActivity {
             @Override
             public boolean onLongClick(View v) {
                 if (!moving) {
-                    Log.e("action", "long click");
+//                    Log.e("action", "long click");
                     startActivity(new Intent(PaintActivity.this, SettingsActivity.class));
                 }
                 return true;
@@ -74,30 +74,40 @@ public class PaintActivity extends AppCompatActivity {
         paint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("action", "click");
+//                Log.e("action", "click");
 
                 getWindowManager().getDefaultDisplay().getSize(screenSize);
                 Log.e("Screen", "(" + screenSize.x + ", " + screenSize.y + ")");
 
-                double billy = (double) touchCoord.x / screenSize.x;
-                if (billy <= (3 - Math.sqrt(5)) / 2) {
-//                    Log.e("touch", "Left");
-                    undo();
-                } else if (billy >= (Math.sqrt(5) - 1) / 2) {
-//                    Log.e("touch", "Right");
-                    redo();
-                } else {
-                    Log.e("touch", "Middle");
+                int xPosition = GoldenRatio.getRange(touchCoord.x / screenSize.x);
+                int yPosition = GoldenRatio.getRange(touchCoord.y / screenSize.y);
+                switch (xPosition * 3 + yPosition) {
+                    case -4: // UpperLeft
+                        layout();
+                        break;
+                    case -2: // LowerLeft
+                        save();
+                        break;
+                    case +2: // UpperRight
+                        undo();
+                        break;
+                    case +4: // LowerRight
+                        redo();
+                        break;
                 }
             }
         });
     }
 
+    private void layout() {
+    }
+
+    private void save() {
+    }
+
     private void undo() {
-        Log.e("paint_style", String.valueOf(settings.getBoolean("paint_style", false)));
     }
 
     private void redo() {
-
     }
 }
