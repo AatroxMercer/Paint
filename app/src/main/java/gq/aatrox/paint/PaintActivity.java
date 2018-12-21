@@ -12,11 +12,9 @@ import android.view.MotionEvent;
 import android.view.View;
 
 public class PaintActivity extends AppCompatActivity {
-
     private boolean moving;
     private Point screenSize = new Point();
     private Point touchCoord = new Point();
-
     private SharedPreferences settings;
 
     @Override
@@ -34,11 +32,9 @@ public class PaintActivity extends AppCompatActivity {
     private void setupPaint() {
         final PaintView paint = findViewById(R.id.paint);
         paint.setOnTouchListener(new View.OnTouchListener() {
-
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 touchCoord.set((int) event.getRawX(), (int) event.getRawY());
-
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
 //                        Log.e("action", "touch");
@@ -58,9 +54,7 @@ public class PaintActivity extends AppCompatActivity {
                 return moving;
             }
         });
-
         paint.setOnLongClickListener(new View.OnLongClickListener() {
-
             @Override
             public boolean onLongClick(View v) {
                 if (!moving) {
@@ -70,7 +64,6 @@ public class PaintActivity extends AppCompatActivity {
                 return true;
             }
         });
-
         paint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

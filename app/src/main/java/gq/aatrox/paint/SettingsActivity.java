@@ -38,7 +38,6 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
 
         private void setSwitchSummary(SwitchPreference switchPreference, String stringValue) {
             boolean value = stringValue.contentEquals("true");
-
             if (switchPreference.getKey().contentEquals("paint_style")) {
                 switchPreference.setSummary(value ? R.string.switch_fill : R.string.switch_stroke);
             } else {

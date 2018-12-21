@@ -13,6 +13,11 @@
     <string name="title_paint_type">Paint Type</string>
     <string name="title_stroke_width">Stroke Width</string>
     <string name="title_paint_style">Fill Style</string>
+    <string name="coming_soon">Coming Soon</string>
+    <string name="setting_group_color">Color</string>
+    <string name="setting_group_paint">Paint</string>
+    <string name="switch_fill">Fill</string>
+    <string name="switch_stroke">Stroke</string>
 
     <string-array name="setting_list_color">
         <item>Black</item>
@@ -57,9 +62,4 @@
         <item>3</item>
         <item>4</item>
     </string-array>
-    <string name="switch_fill">Fill</string>
-    <string name="switch_stroke">Stroke</string>
-    <string name="coming_soon">Coming Soon</string>
-    <string name="setting_group_color">Color</string>
-    <string name="setting_group_paint">Paint</string>
 </resources>

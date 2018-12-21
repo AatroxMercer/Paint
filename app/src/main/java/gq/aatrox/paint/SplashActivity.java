@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 
 public class SplashActivity extends AppCompatActivity {
     @Override
@@ -26,7 +25,6 @@ public class SplashActivity extends AppCompatActivity {
                     sleep(3000);
                     startActivity(new Intent(SplashActivity.this, MenuActivity.class));
                 } catch (Exception e) {
-                    Log.e("SplashActivity", Log.getStackTraceString(e));
                 } finally {
                     overridePendingTransition(0, 0);
                     finish();
