@@ -11,9 +11,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        initSettings();
-
         splashSleep();
     }
 
@@ -26,15 +23,9 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this, MenuActivity.class));
                 } catch (Exception e) {
                 } finally {
-                    overridePendingTransition(0, 0);
                     finish();
                 }
             }
         }.start();
-    }
-
-    private void initSettings() {
-        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
-
     }
 }

@@ -22,9 +22,6 @@ public class PaintActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paint);
 
-        settings = PreferenceManager.getDefaultSharedPreferences(this);
-        String shit = settings.getString("example_text", "shit");
-        Log.e("shit", shit);
         setupPaint();
     }
 

@@ -4,4 +4,5 @@
         <item name="android:background">#3a424c</item>
         <item name="android:windowFullscreen">true</item>
     </style>
+
 </resources>
