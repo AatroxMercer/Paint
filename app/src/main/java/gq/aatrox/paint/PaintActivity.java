@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
+import java.util.Date;
+
 import gq.aatrox.paint.shapes.Circle;
 import gq.aatrox.paint.shapes.Line;
 import gq.aatrox.paint.shapes.Path;
@@ -22,6 +24,7 @@ public class PaintActivity extends AppCompatActivity {
     private Point touchCoord = new Point();
     private SettingsManager settings;
     private PaintView paintView;
+    private Date down, up;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +64,17 @@ public class PaintActivity extends AppCompatActivity {
 //                        Log.e("action", "down");
                         setupShape();
                         shape.start = new Point(touchCoord);
+                        shape.end = new Point(touchCoord);
                         Log.e("start", "(" + shape.start.x + ", " + shape.start.y + ")");
                         moving = false;
+                        down = new Date();
                         break;
                     case MotionEvent.ACTION_UP:
 //                        Log.e("action", "up");
+                        up = new Date();
+                        double distance = Math.hypot(shape.end.x - shape.start.x, shape.end.y - shape.start.y);
                         shape = shape.copy();
+                        moving = distance > 100 || up.getTime() - downgit .getTime() > 200;
                         break;
                     case MotionEvent.ACTION_MOVE:
 //                        Log.e("action", "move");
