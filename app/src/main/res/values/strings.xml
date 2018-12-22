@@ -18,6 +18,9 @@
     <string name="setting_group_paint">Paint</string>
     <string name="switch_fill">Fill</string>
     <string name="switch_stroke">Stroke</string>
+    <string name="title_save">Export as .png</string>
+    <string name="button_ok">OK</string>
+    <string name="button_cancel">Cancel</string>
 
     <string-array name="setting_list_color">
         <item>Black</item>

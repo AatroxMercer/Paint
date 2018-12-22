@@ -19,6 +19,9 @@
     <string name="coming_soon">敬请期待</string>
     <string name="setting_group_color">颜色</string>
     <string name="setting_group_paint">画笔</string>
+    <string name="title_save">快速导出png</string>
+    <string name="button_ok">确定</string>
+    <string name="button_cancel">取消</string>
 
     <string-array name="setting_list_color">
         <item>黑色</item>

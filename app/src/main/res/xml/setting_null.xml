@@ -1,4 +1,16 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <SwitchPreference
+        android:defaultValue="false"
+        android:key="never_closed"
+        android:dependency="never_closed"
+        android:disableDependentsState="true"
+        android:title="一个你开启了就再也无法关闭的开关" />
+
+    <SwitchPreference
+        android:defaultValue="true"
+        android:key="never_open"
+        android:dependency="never_open"
+        android:title="一个你关闭了就再也无法开启的开关" />
 
 </PreferenceScreen>
