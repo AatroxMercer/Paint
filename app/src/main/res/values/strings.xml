@@ -34,21 +34,20 @@
     </string-array>
 
     <string-array name="setting_list_color_values" translatable="false">
-        <item>0xFF000000</item>
-        <item>0xFF0000FF</item>
-        <item>0xFF00FFFF</item>
-        <item>0xFF444444</item>
-        <item>0xFF888888</item>
-        <item>0xFF00FF00</item>
-        <item>0xFFCCCCCC</item>
-        <item>0xFFFF00FF</item>
-        <item>0xFFFF0000</item>
-        <item>0xFFFFFFFF</item>
-        <item>0xFFFFFF00</item>
+        <item>#FF000000</item>
+        <item>#FF0000FF</item>
+        <item>#FF00FFFF</item>
+        <item>#FF444444</item>
+        <item>#FF888888</item>
+        <item>#FF00FF00</item>
+        <item>#FFCCCCCC</item>
+        <item>#FFFF00FF</item>
+        <item>#FFFF0000</item>
+        <item>#FFFFFFFF</item>
+        <item>#FFFFFF00</item>
     </string-array>
 
     <string-array name="setting_list_type">
-        <item>Arc</item>
         <item>Circle</item>
         <item>Line</item>
         <item>Path</item>
@@ -60,6 +59,6 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
-        <item>4</item>
     </string-array>
+    
 </resources>

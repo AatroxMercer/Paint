@@ -34,7 +34,6 @@
         <item>黄色</item>
     </string-array>
     <string-array name="setting_list_type">
-        <item>弧形</item>
         <item>圆形</item>
         <item>线段</item>
         <item>笔迹</item>

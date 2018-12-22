@@ -4,7 +4,6 @@
     package="gq.aatrox.paint">
 
     <application
-        android:name=".PaintApplication"
         android:allowBackup="false"
         android:configChanges="orientation|keyboardHidden|screenSize"
         android:icon="@mipmap/ic_launcher"

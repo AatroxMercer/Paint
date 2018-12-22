@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    sleep(3000);
+                    sleep(0);
                     startActivity(new Intent(SplashActivity.this, MenuActivity.class));
                 } catch (Exception e) {
                 } finally {

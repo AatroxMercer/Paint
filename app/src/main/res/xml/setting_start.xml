@@ -3,18 +3,18 @@
     <PreferenceCategory android:title="@string/setting_group_color">
 
         <ListPreference
-            android:defaultValue="0xFF000000"
-            android:entries="@array/setting_list_color"
-            android:entryValues="@array/setting_list_color_values"
-            android:key="fg_color"
-            android:title="@string/title_fg_color" />
-
-        <ListPreference
-            android:defaultValue="0xFF000000"
+            android:defaultValue="#FFFFFFFF"
             android:entries="@array/setting_list_color"
             android:entryValues="@array/setting_list_color_values"
             android:key="bg_color"
             android:title="@string/title_bg_color" />
+
+        <ListPreference
+            android:defaultValue="#FF000000"
+            android:entries="@array/setting_list_color"
+            android:entryValues="@array/setting_list_color_values"
+            android:key="fg_color"
+            android:title="@string/title_fg_color" />
 
     </PreferenceCategory>
 
@@ -33,7 +33,7 @@
             android:title="@string/title_stroke_width" />
 
         <ListPreference
-            android:defaultValue="3"
+            android:defaultValue="2"
             android:entries="@array/setting_list_type"
             android:entryValues="@array/setting_list_type_values"
             android:key="paint_type"

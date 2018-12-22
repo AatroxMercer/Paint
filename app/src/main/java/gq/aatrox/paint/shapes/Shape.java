@@ -4,36 +4,21 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
 
-abstract class Shape {
-    protected final Paint paint = new Paint();
-    protected Point start, end;
 
-    Shape(int color, int strokeWidth) {
+public abstract class Shape {
+    public Point start, end;
+
+    protected final Paint paint = new Paint();
+
+    Shape(int color, int strokeWidth, boolean isFilled) {
         paint.setColor(color);
         paint.setStrokeWidth(strokeWidth);
+        paint.setStyle(isFilled ? Paint.Style.FILL : Paint.Style.STROKE);
     }
 
-    abstract Shape copy();
+    protected boolean isFilled() { return paint.getStyle() == Paint.Style.FILL; }
 
-    abstract void draw(Canvas canvas);
+    public abstract Shape copy();
 
-    public Paint getPaint() {
-        return paint;
-    }
-
-    public Point getStart() {
-        return start;
-    }
-
-    public void setStart(Point start) {
-        this.start = start;
-    }
-
-    public Point getEnd() {
-        return end;
-    }
-
-    public void setEnd(Point end) {
-        this.end = end;
-    }
+    public abstract void draw(Canvas canvas);
 }
