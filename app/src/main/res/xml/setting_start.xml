@@ -31,4 +31,16 @@
             android:key="paint_type"
             android:title="@string/title_paint_type" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_group_advanced">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="use_grid"
+            android:title="@string/title_use_grid" />
+        <EditTextPreference
+            android:defaultValue="16"
+            android:key="grid_size"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/title_grid_size" />
+    </PreferenceCategory>
 </PreferenceScreen>

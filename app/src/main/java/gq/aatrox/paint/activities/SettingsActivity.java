@@ -100,6 +100,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             bindPreferenceSummaryToValue(findPreference("paint_style"));
             bindPreferenceSummaryToValue(findPreference("paint_type"));
             bindPreferenceSummaryToValue(findPreference("stroke_width"));
+            bindPreferenceSummaryToValue(findPreference("grid_size"));
         }
 
         @Override

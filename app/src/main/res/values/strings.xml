@@ -21,6 +21,9 @@
     <string name="title_save">Export as .png</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
+    <string name="setting_group_advanced">Advanced</string>
+    <string name="title_use_grid">Use Grid</string>
+    <string name="title_grid_size">Grid Size</string>
     <string-array name="setting_list_color">
         <item>Black</item>
         <item>Blue</item>

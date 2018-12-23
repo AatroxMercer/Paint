@@ -80,7 +80,7 @@ public class PaintActivity extends AppCompatActivity {
         paintView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                touchCoord.set((int) event.getRawX(), (int) event.getRawY());
+                touchCoord.set(format(event.getRawX()), format(event.getRawY()));
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         setupShape();
@@ -202,5 +202,10 @@ public class PaintActivity extends AppCompatActivity {
             paintView.activeList.add(paintView.deletedList.get(deletedListLastIndex));
             paintView.deletedList.remove(deletedListLastIndex);
         }
+    }
+
+    private int format(float coord) {
+        int size = settings.getUseGrid() ? settings.getGridSize() : 1;
+        return Math.round(coord / size) * size;
     }
 }

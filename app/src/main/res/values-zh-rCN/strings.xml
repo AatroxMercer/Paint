@@ -22,6 +22,9 @@
     <string name="title_save">快速导出png</string>
     <string name="button_ok">确定</string>
     <string name="button_cancel">取消</string>
+    <string name="setting_group_advanced">高级</string>
+    <string name="title_use_grid">依附网格</string>
+    <string name="title_grid_size">网格大小</string>
     <string-array name="setting_list_color">
         <item>黑色</item>
         <item>蓝色</item>

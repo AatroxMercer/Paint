@@ -41,4 +41,12 @@ public class SettingsManager {
     public int getPaintType() {
         return getInt("paint_type", "2");
     }
+
+    public boolean getUseGrid() {
+        return settings.getBoolean("use_grid", false);
+    }
+
+    public int getGridSize() {
+        return getInt("grid_size", "16");
+    }
 }
