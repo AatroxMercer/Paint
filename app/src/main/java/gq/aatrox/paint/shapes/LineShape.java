@@ -2,14 +2,14 @@ package gq.aatrox.paint.shapes;
 
 import android.graphics.Canvas;
 
-public class Line extends Shape {
-    public Line(int color, int strokeWidth, boolean isFilled) {
+public class LineShape extends Shape {
+    public LineShape(int color, int strokeWidth, boolean isFilled) {
         super(color, strokeWidth, isFilled);
     }
 
     @Override
-    public Line copy() {
-        return new Line(paint.getColor(), (int) paint.getStrokeWidth(), isFilled());
+    public LineShape copy() {
+        return new LineShape(paint.getColor(), (int) paint.getStrokeWidth(), isFilled());
     }
 
     @Override

@@ -21,46 +21,70 @@ public class HelpActivity extends AppCompatActivity {
         textView.setText(Html.fromHtml(help()));
     }
 
+    private String tagParagraph(String context) {
+        return "<p>&emsp;&emsp;" + context + "</p>";
+    }
+
+    private String tagHeading(int level, String context) {
+        return "<h" + level + (level == 1 ? " style='text-align:center;'" : "") + ">" + context + "</h" + level + ">";
+    }
+
+    private String tagListItem(String context) {
+        return "<li>" + context + "</li>";
+    }
+
+    private String tagUnorderedList(String[] listItems) {
+        String ans = "<ul>";
+        for (String listItem : listItems) {
+            ans += tagListItem(listItem);
+        }
+        ans += "</ul>";
+        return ans;
+    }
 
     private String help() {
-        return "<h1 style='text-align:center;'>" + getString(R.string.text_title) + "</h1>" +
-                "<p>" + getString(R.string.text_1) + "</p>" +
-                "<p>" + getString(R.string.text_2) + "</p>" +
-                "<ul>" +
-                "<li>" + getString(R.string.text_list_1_1) + "</li>" +
-                "<li>" + getString(R.string.text_list_1_2) + "</li>" +
-                "<li>" + getString(R.string.text_list_1_3) + "</li>" +
-                "<li>" + getString(R.string.text_list_1_4) + "</li>" +
-                "</ul>" +
-                "<h2>" + getString(R.string.text_title_1) + "</h2>" +
-                "<p>" + getString(R.string.text_3) + "</p>" +
-                "<h2>" + getString(R.string.text_title_2) + "</h2>" +
-                "<p>" + getString(R.string.text_4) + "</p>" +
-                "<h3>" + getString(R.string.text_title_2_1) + "</h3>" +
-                "<p>" + getString(R.string.text_5) + "</p>" +
-                "<h3>" + getString(R.string.text_title_2_2) + "</h3>" +
-                "<p>" + getString(R.string.text_6) +  "</p>" +
-                "<h3>" + getString(R.string.text_title_2_3) + "</h3>" +
-                "<p>" + getString(R.string.text_7) + "</p>" +
-                "<p>" + getString(R.string.text_8) + "</p>" +
-                "<ul>" +
-                "<li>" + getString(R.string.text_list_2_1) + "</li>" +
-                "<li>" + getString(R.string.text_list_2_2) + "</li>" +
-                "<li>" + getString(R.string.text_list_2_3) + "</li>" +
-                "<li>" + getString(R.string.text_list_2_4) + "</li>" +
-                "</ul>" +
-                "<h3>" + getString(R.string.text_title_2_4) + "</h3>" +
-                "<p>" + getString(R.string.text_9) + "</p>" +
-                "<h3>" + getString(R.string.text_title_2_5) + "</h3>" +
-                "<p>" + getString(R.string.text_10) + "</p>" +
-                "<h3>" + getString(R.string.text_title_2_6) + "</h3>" +
-                "<p>" + getString(R.string.text_11) + "</p>" +
-                "<p>" + getString(R.string.text_12) + "</p>" +
-                "<p>" + getString(R.string.text_13) + "</p>" +
-                "<h2>" + getString(R.string.text_title_3) + "</h2>" +
-                "<p>" + getString(R.string.text_14) + "</p>" +
-                "<h2>" + getString(R.string.text_title_4) + "</h2>" +
-                "<p>" + getString(R.string.text_15) + "</p>";
+        return tagHeading(1, getString(R.string.text_title)) +
+                tagParagraph(getString(R.string.text_1)) +
+                tagParagraph(getString(R.string.text_2)) +
+                tagUnorderedList(
+                        new String[]{
+                                getString(R.string.text_list_1_1),
+                                getString(R.string.text_list_1_2),
+                                getString(R.string.text_list_1_3),
+                                getString(R.string.text_list_1_4)
+                        }
+                ) +
+                tagHeading(2, getString(R.string.text_title_1)) +
+                tagParagraph(getString(R.string.text_3)) +
+                tagHeading(2, getString(R.string.text_title_2)) +
+                tagParagraph(getString(R.string.text_4)) +
+                tagHeading(3, getString(R.string.text_title_2_1)) +
+                tagParagraph(getString(R.string.text_5)) +
+                tagHeading(3, getString(R.string.text_title_2_2)) +
+                tagParagraph(getString(R.string.text_6)) +
+                tagHeading(3, getString(R.string.text_title_2_3)) +
+                tagParagraph(getString(R.string.text_7)) +
+                tagParagraph(getString(R.string.text_8)) +
+                tagUnorderedList(
+                        new String[]{
+                                getString(R.string.text_list_2_1),
+                                getString(R.string.text_list_2_2),
+                                getString(R.string.text_list_2_3),
+                                getString(R.string.text_list_2_4)
+                        }
+                ) +
+                tagHeading(3, getString(R.string.text_title_2_4)) +
+                tagParagraph(getString(R.string.text_9)) +
+                tagHeading(3, getString(R.string.text_title_2_5)) +
+                tagParagraph(getString(R.string.text_10)) +
+                tagHeading(3, getString(R.string.text_title_2_6)) +
+                tagParagraph(getString(R.string.text_11)) +
+                tagParagraph(getString(R.string.text_12)) +
+                tagParagraph(getString(R.string.text_13)) +
+                tagHeading(2, getString(R.string.text_title_3)) +
+                tagParagraph(getString(R.string.text_14)) +
+                tagHeading(2, getString(R.string.text_title_4)) +
+                tagParagraph(getString(R.string.text_15));
     }
 
     public void start(View view) {

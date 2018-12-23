@@ -15,7 +15,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -31,10 +30,10 @@ import gq.aatrox.paint.tools.GoldenRatio;
 import gq.aatrox.paint.views.PaintView;
 import gq.aatrox.paint.R;
 import gq.aatrox.paint.tools.SettingsManager;
-import gq.aatrox.paint.shapes.Circle;
-import gq.aatrox.paint.shapes.Line;
-import gq.aatrox.paint.shapes.Path;
-import gq.aatrox.paint.shapes.Rectangle;
+import gq.aatrox.paint.shapes.CircleShape;
+import gq.aatrox.paint.shapes.LineShape;
+import gq.aatrox.paint.shapes.PathShape;
+import gq.aatrox.paint.shapes.RectangleShape;
 import gq.aatrox.paint.shapes.Shape;
 
 public class PaintActivity extends AppCompatActivity {
@@ -61,16 +60,16 @@ public class PaintActivity extends AppCompatActivity {
     private void setupShape() {
         switch (settings.getPaintType()) {
             case 0:
-                shape = new Circle(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
+                shape = new CircleShape(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
                 break;
             case 1:
-                shape = new Line(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
+                shape = new LineShape(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
                 break;
             case 2:
-                shape = new Path(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
+                shape = new PathShape(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
                 break;
             case 3:
-                shape = new Rectangle(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
+                shape = new RectangleShape(settings.getForegroundColor(), settings.getStrokeWidth(), settings.getPaintStyle());
                 break;
         }
     }
@@ -162,22 +161,16 @@ public class PaintActivity extends AppCompatActivity {
                         filename += ".png";
                     }
 
-                    File file = new File(Environment.getExternalStorageDirectory().getPath(), filename);
-                    Log.e("file", file.getPath());
-                    Log.e("file", String.valueOf(file.exists()));
+                    File file = new File(Environment.getExternalStorageDirectory().getPath() + "/Pictures", filename);
                     FileOutputStream fileOutputStream;
                     try {
                         fileOutputStream = new FileOutputStream(file);
-                        Log.e("file", String.valueOf(file.exists()));
                         bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-                        Log.e("file", String.valueOf(file.exists()));
                         fileOutputStream.close();
-                        Log.e("file", String.valueOf(file.exists()));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
 
-                    Log.e("file", String.valueOf(file.exists()));
                     Toast.makeText(PaintActivity.this, "Done", Toast.LENGTH_SHORT).show();
                 }
             });

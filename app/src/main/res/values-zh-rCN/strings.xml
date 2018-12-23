@@ -25,8 +25,10 @@
     <string name="setting_group_advanced">高级</string>
     <string name="title_use_grid">依附网格</string>
     <string name="title_grid_size">网格大小</string>
-
-
+    <string name="setting_group_about_us">关于我们</string>
+    <string name="developer_0">刘宇轩</string>
+    <string name="developer_1">宋斌</string>
+    <string name="developer_2">万和润</string>
 
     <string name="text_title">帮助</string>
     <string name="text_1">欢迎使用 Paint 画图 app，在该 app 中，你可以体验画图的乐趣。</string>

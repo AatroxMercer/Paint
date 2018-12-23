@@ -41,6 +41,7 @@
             android:key="grid_size"
             android:selectAllOnFocus="true"
             android:singleLine="true"
-            android:title="@string/title_grid_size" />
+            android:title="@string/title_grid_size"
+            android:dependency="use_grid"/>
     </PreferenceCategory>
 </PreferenceScreen>
