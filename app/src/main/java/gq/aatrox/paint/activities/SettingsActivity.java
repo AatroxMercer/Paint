@@ -1,4 +1,4 @@
-package gq.aatrox.paint;
+package gq.aatrox.paint.activities;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
@@ -13,6 +13,8 @@ import android.preference.PreferenceManager;
 import android.view.MenuItem;
 
 import java.util.List;
+
+import gq.aatrox.paint.R;
 
 public class SettingsActivity extends AppCompatPreferenceActivity {
     @Override

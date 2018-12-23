@@ -1,10 +1,10 @@
 <preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
     <header
-        android:fragment="gq.aatrox.paint.SettingsActivity$StartSettingsFragment"
+        android:fragment="gq.aatrox.paint.activities.SettingsActivity$StartSettingsFragment"
         android:icon="@android:drawable/ic_menu_manage"
         android:title="@string/setting_start" />
     <header
-        android:fragment="gq.aatrox.paint.SettingsActivity$NullSettingsFragment"
+        android:fragment="gq.aatrox.paint.activities.SettingsActivity$NullSettingsFragment"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="@string/coming_soon" />
 </preference-headers>

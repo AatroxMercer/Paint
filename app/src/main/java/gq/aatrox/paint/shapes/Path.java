@@ -9,11 +9,10 @@ public class Path extends Shape {
 
     @Override
     public Path copy() {
-        return null;
+        return new Path(paint.getColor(), (int) paint.getStrokeWidth(), isFilled());
     }
 
     @Override
     public void draw(Canvas canvas) {
-
     }
 }

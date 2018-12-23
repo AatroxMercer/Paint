@@ -21,7 +21,6 @@
     <string name="title_save">Export as .png</string>
     <string name="button_ok">OK</string>
     <string name="button_cancel">Cancel</string>
-
     <string-array name="setting_list_color">
         <item>Black</item>
         <item>Blue</item>
@@ -35,7 +34,6 @@
         <item>White</item>
         <item>Yellow</item>
     </string-array>
-
     <string-array name="setting_list_color_values" translatable="false">
         <item>#FF000000</item>
         <item>#FF0000FF</item>
@@ -49,19 +47,16 @@
         <item>#FFFFFFFF</item>
         <item>#FFFFFF00</item>
     </string-array>
-
     <string-array name="setting_list_type">
         <item>Circle</item>
         <item>Line</item>
         <item>Path</item>
         <item>Rectangle</item>
     </string-array>
-
     <string-array name="setting_list_type_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
     </string-array>
-    
 </resources>

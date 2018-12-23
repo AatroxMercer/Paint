@@ -1,4 +1,4 @@
-package gq.aatrox.paint;
+package gq.aatrox.paint.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -15,7 +15,6 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
@@ -26,6 +25,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.regex.Pattern;
 
+import gq.aatrox.paint.GoldenRatio;
+import gq.aatrox.paint.PaintView;
+import gq.aatrox.paint.R;
+import gq.aatrox.paint.SettingsManager;
 import gq.aatrox.paint.shapes.Circle;
 import gq.aatrox.paint.shapes.Line;
 import gq.aatrox.paint.shapes.Path;
@@ -40,13 +43,11 @@ public class PaintActivity extends AppCompatActivity {
     private SettingsManager settings;
     private PaintView paintView;
     private Date down, up;
-
-    private String[] permissions = new String[] {
+    private String[] permissions = new String[]{
             Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
     private ArrayList<String> permissionList = new ArrayList<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +74,6 @@ public class PaintActivity extends AppCompatActivity {
         }
     }
 
-
     @SuppressLint("ClickableViewAccessibility")
     private void setupPaint() {
         paintView = findViewById(R.id.paint);
@@ -83,11 +83,9 @@ public class PaintActivity extends AppCompatActivity {
                 touchCoord.set((int) event.getRawX(), (int) event.getRawY());
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-//                        Log.e("action", "down");
                         setupShape();
                         shape.start = new Point(touchCoord);
                         shape.end = new Point(touchCoord);
-                        Log.e("start", "(" + shape.start.x + ", " + shape.start.y + ")");
                         drawing = false;
                         down = new Date();
                         break;
@@ -95,7 +93,6 @@ public class PaintActivity extends AppCompatActivity {
                         shape = shape.copy();
                         break;
                     case MotionEvent.ACTION_MOVE:
-//                        Log.e("action", "move");
                         if (!drawing) {
                             up = new Date();
                             double distance = Math.hypot(shape.end.x - shape.start.x, shape.end.y - shape.start.y);
@@ -104,10 +101,7 @@ public class PaintActivity extends AppCompatActivity {
                                 paintView.deletedList.clear();
                             }
                         }
-
-                        Log.e("start", "(" + shape.start.x + ", " + shape.start.y + ")");
                         shape.end = new Point(touchCoord);
-                        Log.e("__end", "(" + shape.end.x + ", " + shape.end.y + ")");
                         paintView.invalidate();
                         break;
                 }
@@ -117,12 +111,9 @@ public class PaintActivity extends AppCompatActivity {
         paintView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Log.e("action", "click");
-
                 getWindowManager().getDefaultDisplay().getSize(screenSize);
-
-                int xPosition = GoldenRatio.getRange((double)(touchCoord.x) / screenSize.x);
-                int yPosition = GoldenRatio.getRange((double)(touchCoord.y) / screenSize.y);
+                int xPosition = GoldenRatio.getRange((double) (touchCoord.x) / screenSize.x);
+                int yPosition = GoldenRatio.getRange((double) (touchCoord.y) / screenSize.y);
                 switch (xPosition * 3 + yPosition) {
                     case -4: // UpperLeft
                         save();
@@ -144,19 +135,15 @@ public class PaintActivity extends AppCompatActivity {
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        Log.e("error", "Size: " + permissions.length);
     }
 
     private void save() {
         permissionList.clear();
-
-        for (int i = 0; i < permissions.length; i++) {
-            if (ContextCompat.checkSelfPermission(this, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
-                permissionList.add(permissions[i]);
+        for (String permission : permissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                permissionList.add(permission);
             }
         }
-
-        Log.e("first", "Size: " + permissionList.size());
         if (permissionList.isEmpty()) {
             final EditText editText = new EditText(this);
             AlertDialog.Builder saveDialog = new AlertDialog.Builder(this);
@@ -170,15 +157,12 @@ public class PaintActivity extends AppCompatActivity {
                     paintView.onDraw(canvas);
                     canvas.save();
                     canvas.restore();
-
                     String filename = editText.getText().toString();
                     if (!Pattern.matches("^.*\\.png$", filename)) {
                         filename += ".png";
                     }
-
                     File file = new File(Environment.getExternalStorageDirectory().getPath() + "/DCIM/paint/" + filename + "png");
                     FileOutputStream fileOutputStream;
-
                     try {
                         fileOutputStream = new FileOutputStream(file);
                         bitmap.compress(Bitmap.CompressFormat.PNG, 50, fileOutputStream);
@@ -191,13 +175,11 @@ public class PaintActivity extends AppCompatActivity {
             saveDialog.setNegativeButton(R.string.button_cancel, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-
                 }
             });
             saveDialog.show();
         } else {
-            String[] requestPermissions = permissionList.toArray(new String[permissionList.size()]);
-            Log.e("first", "Size: " + requestPermissions.length);
+            String[] requestPermissions = permissionList.toArray(new String[0]);
             ActivityCompat.requestPermissions(this, requestPermissions, 0);
         }
     }
@@ -209,7 +191,6 @@ public class PaintActivity extends AppCompatActivity {
     private void undo() {
         if (!paintView.activeList.isEmpty()) {
             int activeListLastIndex = paintView.activeList.size() - 1;
-
             paintView.deletedList.add(paintView.activeList.get(activeListLastIndex));
             paintView.activeList.remove(activeListLastIndex);
         }
@@ -218,7 +199,6 @@ public class PaintActivity extends AppCompatActivity {
     private void redo() {
         if (!paintView.deletedList.isEmpty()) {
             int deletedListLastIndex = paintView.deletedList.size() - 1;
-
             paintView.activeList.add(paintView.deletedList.get(deletedListLastIndex));
             paintView.deletedList.remove(deletedListLastIndex);
         }

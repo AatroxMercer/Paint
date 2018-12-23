@@ -5,10 +5,12 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.preference.PreferenceManager;
 
+import java.util.Objects;
+
 public class SettingsManager {
     private final SharedPreferences settings;
 
-    SettingsManager(Context context) {
+    public SettingsManager(Context context) {
         settings = PreferenceManager.getDefaultSharedPreferences(context);
     }
 
@@ -17,16 +19,26 @@ public class SettingsManager {
     }
 
     private int getInt(String key, String defValue) {
-        return Integer.parseInt(settings.getString(key, defValue));
+        return Integer.parseInt(Objects.requireNonNull(settings.getString(key, defValue)));
     }
 
-    public int getBackgroundColor() { return getColor("bg_color", "#FFFFFFFF"); }
+    int getBackgroundColor() {
+        return getColor("bg_color", "#FFFFFFFF");
+    }
 
-    public int getForegroundColor() { return getColor("fg_color", "#FF000000"); }
+    public int getForegroundColor() {
+        return getColor("fg_color", "#FF000000");
+    }
 
-    public boolean getPaintStyle() { return settings.getBoolean("paint_style", false); }
+    public boolean getPaintStyle() {
+        return settings.getBoolean("paint_style", false);
+    }
 
-    public int getStrokeWidth() { return getInt("stroke_width", "4"); }
+    public int getStrokeWidth() {
+        return getInt("stroke_width", "4");
+    }
 
-    public int getPaintType() { return getInt("paint_type", "2"); }
+    public int getPaintType() {
+        return getInt("paint_type", "2");
+    }
 }
