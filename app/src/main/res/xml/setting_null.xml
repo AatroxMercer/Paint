@@ -2,41 +2,28 @@
     <PreferenceCategory android:title="Eggs">
         <SwitchPreference
             android:defaultValue="true"
-            android:key="never_open"
             android:dependency="never_open"
+            android:key="never_open"
             android:title="Dislike our app?" />
-
         <SwitchPreference
             android:defaultValue="false"
-            android:key="never_close"
             android:dependency="never_close"
             android:disableDependentsState="true"
+            android:key="never_close"
             android:title="Enjoy our app?" />
     </PreferenceCategory>
-
     <PreferenceCategory android:title="@string/setting_group_about_us">
         <EditTextPreference
-            android:defaultValue="@string/developer_0"
+            android:selectable="false"
             android:summary="@string/developer_0"
-            android:key="2n8asm"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
             android:title="2n8asm" />
-
         <EditTextPreference
-            android:defaultValue="sb"
+            android:selectable="false"
             android:summary="sb"
-            android:key="Aatrox"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
             android:title="Aatrox" />
-
         <EditTextPreference
-            android:defaultValue="whr"
+            android:selectable="false"
             android:summary="whr"
-            android:key="whr000001"
-            android:selectAllOnFocus="true"
-            android:singleLine="true"
             android:title="whr000001" />
     </PreferenceCategory>
 </PreferenceScreen>
