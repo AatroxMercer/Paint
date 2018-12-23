@@ -1,4 +1,4 @@
-package gq.aatrox.paint;
+package gq.aatrox.paint.tools;
 
 public class GoldenRatio {
     private static final double LOWER = (3 - Math.sqrt(5)) / 2;

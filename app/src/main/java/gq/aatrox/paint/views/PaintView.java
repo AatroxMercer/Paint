@@ -1,4 +1,4 @@
-package gq.aatrox.paint;
+package gq.aatrox.paint.views;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -8,6 +8,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 
+import gq.aatrox.paint.tools.SettingsManager;
 import gq.aatrox.paint.shapes.Shape;
 
 public class PaintView extends View {

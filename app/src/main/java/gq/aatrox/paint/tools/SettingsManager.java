@@ -1,4 +1,4 @@
-package gq.aatrox.paint;
+package gq.aatrox.paint.tools;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -22,7 +22,7 @@ public class SettingsManager {
         return Integer.parseInt(Objects.requireNonNull(settings.getString(key, defValue)));
     }
 
-    int getBackgroundColor() {
+    public int getBackgroundColor() {
         return getColor("bg_color", "#FFFFFFFF");
     }
 
