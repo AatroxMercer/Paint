@@ -10,7 +10,6 @@ import android.graphics.Canvas;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Environment;
-import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -163,7 +162,7 @@ public class PaintActivity extends AppCompatActivity {
                         filename += ".png";
                     }
 
-                    File file = new File(Environment.getExternalStorageDirectory().getPath() + "", filename);
+                    File file = new File(Environment.getExternalStorageDirectory().getPath(), filename);
                     Log.e("file", file.getPath());
                     Log.e("file", String.valueOf(file.exists()));
                     FileOutputStream fileOutputStream;

@@ -25,6 +25,44 @@
     <string name="setting_group_advanced">高级</string>
     <string name="title_use_grid">依附网格</string>
     <string name="title_grid_size">网格大小</string>
+
+
+
+    <string name="text_title">帮助</string>
+    <string name="text_1">欢迎使用 Paint 画图 app，在该 app 中，你可以体验画图的乐趣。</string>
+    <string name="text_2">在您开始画图的时候，您可以通过拖动来画图。画图界面可以点击四个角落：</string>
+    <string name="text_list_1_1">左上角：导出</string>
+    <string name="text_list_1_2">左下角：设置</string>
+    <string name="text_list_1_3">右上角：撤消</string>
+    <string name="text_list_1_4">右下角：恢复</string>
+    <string name="text_title_1">导出</string>
+    <string name="text_3">在这里，您可以把您绘制的图像导出为.png格式的图片，可以分享给您的好友们</string>
+    <string name="text_title_2">设置</string>
+    <string name="text_4">在设置界面中，您可以设置当前绘制板的各种属性：</string>
+    <string name="text_title_2_1">背景颜色</string>
+    <string name="text_5">您可以在这里选择我们为您准备的丰富的背景色彩</string>
+    <string name="text_title_2_2">前景颜色</string>
+    <string name="text_6">您可以在这里选择下一个绘制图形的颜色</string>
+    <string name="text_title_2_3">图形形状</string>
+    <string name="text_7">您可以在这里选择下一个绘制图形的形状</string>
+    <string name="text_8">我们为您提供了如下的图形：</string>
+    <string name="text_list_2_1">画笔（画自由路径）</string>
+    <string name="text_list_2_2">线段</string>
+    <string name="text_list_2_3">圆</string>
+    <string name="text_list_2_4">矩形</string>
+    <string name="text_title_2_4">是否填充</string>
+    <string name="text_9">您可以选择图形是否填充颜色</string>
+    <string name="text_title_2_5">线条宽度</string>
+    <string name="text_10">您可以设置线条的宽度</string>
+    <string name="text_title_2_6">依附格点</string>
+    <string name="text_11">您可以选择是否开启依附格点功能</string>
+    <string name="text_12">如果您开启了这个功能，您的所有绘制将会严格符合格点，是强迫症用户的福音</string>
+    <string name="text_13">如果您开启了这个功能，您还可以在这里设置格点大小</string>
+    <string name="text_title_3">撤消</string>
+    <string name="text_14">您可以撤消上一步您的操作</string>
+    <string name="text_title_4">恢复</string>
+    <string name="text_15">您可以恢复您上一次的撤消操作</string>
+
     <string-array name="setting_list_color">
         <item>黑色</item>
         <item>蓝色</item>

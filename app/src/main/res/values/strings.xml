@@ -24,6 +24,42 @@
     <string name="setting_group_advanced">Advanced</string>
     <string name="title_use_grid">Use Grid</string>
     <string name="title_grid_size">Grid Size</string>
+
+    <string name="text_title">help</string>
+    <string name="text_1">Welcome to the Paint  app, where you can experience the fun of drawing.</string>
+    <string name="text_2">When you start drawing, you can draw by dragging. The drawing interface can be clicked in four corners:</string>
+    <string name="text_list_1_1">Top left corner: Export</string>
+    <string name="text_list_1_2">Bottom left corner: Setting</string>
+    <string name="text_list_1_3">Top right corner: Undo</string>
+    <string name="text_list_1_4">Bottom right corner: restore</string>
+    <string name="text_title_1">Export</string>
+    <string name="text_3">Here, you can export your drawn images to a .png format and share them with your friends..png格式的图片，可以分享给您的好友们</string>
+    <string name="text_title_2">Setting</string>
+    <string name="text_4">In the settings interface, you can set various properties of the current drawing board:</string>
+    <string name="text_title_2_1">background color</string>
+    <string name="text_5">Here you can choose the rich background color we have prepared for you.</string>
+    <string name="text_title_2_2">Foreground color</string>
+    <string name="text_6">Here you can choose the color of the next drawing graphic.</string>
+    <string name="text_title_2_3">Graphic shape</string>
+    <string name="text_7">Here you can choose the shape of the next drawing graphic</string>
+    <string name="text_8">We have provided you with the following graphics:</string>
+    <string name="text_list_2_1">Brush (paint free path)</string>
+    <string name="text_list_2_2">Line segment</string>
+    <string name="text_list_2_3">circle</string>
+    <string name="text_list_2_4">rectangle</string>
+    <string name="text_title_2_4">Whether to fill</string>
+    <string name="text_9">You can choose whether the graphic fills the color</string>
+    <string name="text_title_2_5">Line width</string>
+    <string name="text_10">You can set the width of the line</string>
+    <string name="text_title_2_6">Dependent grid</string>
+    <string name="text_11">You can choose whether to enable the grid function.</string>
+    <string name="text_12">If you turn this feature on, all your drawing will be strictly in line with the grid, which is the gospel of OCD users.</string>
+    <string name="text_13">If you have this feature turned on, you can also set the grid size here.</string>
+    <string name="text_title_3">Undo</string>
+    <string name="text_14">You can undo your previous step</string>
+    <string name="text_title_4">restore</string>
+    <string name="text_15">You can resume your last undo operation</string>
+
     <string-array name="setting_list_color">
         <item>Black</item>
         <item>Blue</item>
